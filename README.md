@@ -76,7 +76,7 @@ A fun math game!
   ### Prerequisites
 
   * Ruby 2.7.4
-  * Rails 5.2.8
+  * Rails 7.0.4.3
 
   ### Installation
 
@@ -136,13 +136,6 @@ A fun math game!
       <a href="https://www.linkedin.com/in/brandon-gray-67903689/">LinkedIn: Brandon Gray</a>
     </p>
   </div>
-
-  <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-  ### Project Managers-Instructors
-
-  1. Juliet Eyraud
-  1. Leta Keane
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
