@@ -1,6 +1,10 @@
 <h1>Flash Cards</h1>
 
-<center><h2>Current High Scores</h2></center>
-<% @users.each do |user| %>
-  <center><%= "#{user.first_name} #{user.last_name} - High Score: #{user.hi_score}" %></center>
-<% end %>
+<div class="high-scores" >
+  <center><h2>Current High Scores</h2></center>
+  <% @users.each do |user| %>
+    <div class="high-score" id=<%= "user-#{user.id}" %>>
+      <center><%= "#{user.first_name} #{user.last_name} - High Score: #{user.hi_score}" %></center>
+    </div>
+  <% end %>
+</div>

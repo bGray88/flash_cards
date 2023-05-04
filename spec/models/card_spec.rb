@@ -2,16 +2,18 @@ require 'rails_helper'
 
 RSpec.describe Card, type: :model do
   describe 'validations' do
-    it {should belong_to(:deck) }
+    it { should belong_to(:deck).optional }
 
     it { should validate_presence_of(:question) }
     it { should validate_presence_of(:answer) }
+    it { should validate_presence_of(:calc_type) }
+  end
+
+  before(:each) do
+    @cards = create_list(:card, 5)
   end
 
   it 'exists and has attributes' do
-    deck = create(:deck)
-    card = create(:card, deck: deck)
-
-    expect(card).to be_a(Card)
+    expect(@cards.first).to be_a(Card)
   end
 end
