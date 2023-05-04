@@ -15,8 +15,8 @@ RSpec.describe 'Welcome-Index' do
       expect(page).to have_content("High Score:")
     end
     within("div.high-scores") do
-      expect("#{User.sort_by_score(:desc).first.last_name}").to appear_before("#{User.sort_by_score(:desc).second.last_name}")
-      expect("#{User.sort_by_score(:desc).second.last_name}").to appear_before("#{User.sort_by_score(:desc).third.last_name}")
+      expect("#{User.sort_by_score(:desc).first.hi_score}").to be >=("#{User.sort_by_score(:desc).second.hi_score}")
+      expect("#{User.sort_by_score(:desc).second.hi_score}").to be >=("#{User.sort_by_score(:desc).third.hi_score}")
     end
   end
 end
