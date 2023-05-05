@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     if user.save
+      UsersMailer.welcome_email(user.id).deliver_later
       flash[:success] = "Please Log In, #{user.first_name} #{user.last_name}"
       redirect_to login_path
     else
