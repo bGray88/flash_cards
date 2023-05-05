@@ -12,7 +12,7 @@ RSpec.describe 'Welcome-Index' do
 
   it 'diplays high scores' do
     within("div#user-#{User.sort_by_score(:desc).first.id}.high-score") do
-      expect(page).to have_content("High Score:")
+      expect(page).to have_content("High Score: #{User.sort_by_score(:desc).first.hi_score}")
     end
     within("div.high-scores") do
       expect("#{User.sort_by_score(:desc).first.hi_score}").to be >=("#{User.sort_by_score(:desc).second.hi_score}")

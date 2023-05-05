@@ -1,4 +1,6 @@
 //= link_tree ../images
-//= link_directory ../stylesheets .css
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
+
+// Add the line below, with the double slashes and equal sign, followed by spaces.
+//= link_tree ../builds

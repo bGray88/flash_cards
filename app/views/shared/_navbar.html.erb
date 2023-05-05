@@ -1,0 +1,20 @@
+<nav class="navbar navbar-inverse navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href=<%= root_path %>>Home</a></li>
+        <li><a href=<%= game_path %>>Play</a></li>
+        <li><a href=https://github.com/bGray88>Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li><a href=<%= logout_path %> data-method="delete"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href=<%= user_path   %>><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+        <% else %>
+          <li><a href=<%= login_path    %>><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href=<%= register_path %>><span class="glyphicon glyphicon-plus"></span> Create Account</a></li>
+        <% end %>  
+      </ul>
+    </div>
+  </div>
+</nav>

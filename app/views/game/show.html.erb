@@ -1,21 +1,35 @@
-<h1>Flash Cards</h1>
+<h1 class="text-center">Flash Cards</h1>
 
-<center><h2 class="animated card fadeInUp">
-  <%= form_with url: answer_path, method: :patch, data: { turbo: false }, local: true do |form| %>
-    <div class="card container border-primary">
-      <div class="card-header row justify-content-between text-white bg-primary">
-        <h5 class='pull-left'><%= "Card Number #{@card.id}" %></h5>
-        <h6 class="pull-right"><%= "Type: #{@card.calc_type.capitalize}" %></h6>
+<div class="container">
+  <div class="row">
+    <div class="col-4 sidenav">
+      <nav class="navbar navbar-inverse bg-light">
+        <div class="list-score">
+          <div class="card-body">
+            <div class="card-header text-black">
+              <h4 class="text-center"><%= "High Score: " %><%= "#{current_user.first_name} #{current_user.last_name}" %></h4>
+            </div>
+            <h2 class="card-text text-center"><%= current_user.hi_score %></h2><br>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="col-8 question-body">
+      <div class="card-header text-white bg-primary">
+        <h5 class="text-center"><%= "Card Number #{@card.id}" %></h5>
+        <h5 class="text-center"><%= "Type: #{@card.calc_type.capitalize}" %></h5>
       </div>
       <div class="card-body">
-        <p class="card-text"><%= @card.question %></p>
+        <h2 class="card-text text-center"><%= @card.question %></h2><br>
       </div>
-      <div class="card-form form-inline">
-        <% form.label :answer, { class: "form-label"} %>
-        <%= hidden_field_tag 'card_id', @card.id %>
-        <%= form.number_field :answer, { class: "form-control", placeholder: "Answer" } %>
-        <%= form.submit "Submit Answer", class: "btn btn-primary" %>
+      <div class="form-inline text-center">
+        <%= form_with url: answer_path, method: :patch, data: { turbo: false }, local: true do |form| %>
+          <% form.label :answer, { class: "form-label"} %>
+          <%= hidden_field_tag 'card_id', @card.id %>
+          <%= form.number_field :answer, { class: "form-control", placeholder: "Answer" } %>
+          <%= form.submit "Submit Answer", class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
-  <% end %>
-</h2></center>
+  </div>
+</div>
