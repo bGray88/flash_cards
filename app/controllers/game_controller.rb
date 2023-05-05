@@ -1,4 +1,6 @@
 class GameController < ApplicationController
+  before_action :validate_user, only: [:show, :update]
+
   def show
     @deck = Deck.limit(1).first
     @card = @deck.cards.order("RANDOM()").first
@@ -13,5 +15,14 @@ class GameController < ApplicationController
       flash[:error] = "Incorrect"
     end
     redirect_to game_path
+  end
+
+  private
+
+  def validate_user
+    unless current_user
+      flash[:error] = "Login necessary"
+      redirect_to root_path
+    end
   end
 end

@@ -1,15 +1,14 @@
 <h1 class="text-center">Create a New User</h1>
 
-<%= form_with model: @user, local: true do |form| %>
-  <%= form.label :first_name, "First Name: " %>
-  <%= form.text_field :first_name, required: true %><br>
-  <%= form.label :last_name,  "Last Name:  "  %>
-  <%= form.text_field :last_name, required: true %><br>
-  <%= form.label :email, "Email: " %>
-  <%= form.text_field :email, required: true %><br>
-  <%= form.label :password, "Password: " %>
-  <%= form.password_field :password, required: true %><br>
-  <%= form.label :password_confirmation, "Confirm: " %>
-  <%= form.password_field :password_confirmation, required: true %><br>
-  <%= form.submit "Create New User" %>
-<% end %>
+<div class="row d-flex justify-content-center">
+  <div class="mb-3 w-50" id="login">
+    <%= bootstrap_form_with model: @user, method: :post, local: true do |form| %>
+      <%= form.text_field :first_name, required: true %><br>
+      <%= form.text_field :last_name, required: true %><br>
+      <%= form.text_field :email, required: true %><br>
+      <%= form.password_field :password, required: true %><br>
+      <%= form.password_field :password_confirmation, required: true %><br>
+      <%= form.submit "Create New User", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
