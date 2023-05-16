@@ -4,7 +4,9 @@ RSpec.describe Card, type: :model do
   describe 'validations' do
     it { should belong_to(:deck).optional }
 
-    it { should validate_presence_of(:question) }
+    it { should validate_presence_of(:number_1) }
+    it { should validate_presence_of(:number_2) }
+    it { should validate_presence_of(:operator) }
     it { should validate_presence_of(:answer) }
     it { should validate_presence_of(:calc_type) }
   end

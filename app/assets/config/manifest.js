@@ -5,3 +5,5 @@
 // Add the line below, with the double slashes and equal sign, followed by spaces.
 //= link_tree ../builds
 //= link application.css
+//= link playing_card.css
+//= link main_header.css

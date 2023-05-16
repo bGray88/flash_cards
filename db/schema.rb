@@ -15,9 +15,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_031123) do
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.string "question", null: false
-    t.string "answer", null: false
     t.integer "calc_type", null: false
+    t.string "number_1", null: false
+    t.string "number_2", null: false
+    t.string "operator", null: false
+    t.string "answer", null: false
     t.bigint "deck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
