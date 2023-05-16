@@ -76,8 +76,6 @@ Rails.application.configure do
     enable_starttls_auto: true 
   }
 
-  config.active_job.queue_adapter = :sidekiq
-
   config.active_job.queue_name_prefix = "FlashCards"
   config.active_job.queue_name_delimiter = "_"
 

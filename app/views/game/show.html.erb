@@ -1,32 +1,52 @@
+<%= stylesheet_link_tag 'playing_card.css' %>
+
 <h1 class="text-center">Flash Cards</h1>
 
 <div class="container">
-  <div class="row">
-    <div class="col-4 sidenav">
+  <div class="row d-flex justify-content-center">
+    <div class="col-3 sidenav">
       <nav class="navbar navbar-inverse bg-light">
         <div class="list-score">
           <div class="card-body">
             <div class="card-header text-black">
               <h4 class="text-center"><%= "High Score: " %><%= "#{current_user.first_name} #{current_user.last_name}" %></h4>
             </div>
-            <h2 class="card-text text-center"><%= current_user.hi_score %></h2><br>
+            <h2 class="card-text text-center" style="font-size:5vw"><%= current_user.hi_score %></h2><br>
           </div>
         </div>
       </nav>
     </div>
-    <div class="col-8 question-body">
-      <div class="card-header text-white bg-primary">
-        <h5 class="text-center"><%= "Card Number #{@card.id}" %></h5>
-        <h5 class="text-center"><%= "Type: #{@card.calc_type.capitalize}" %></h5>
-      </div>
-      <div class="card-body">
-        <h2 class="card-text text-center"><%= @card.question %></h2><br>
+    <div class="col-4 question-body">
+      <div class="card">
+        <div class="card-header text-white bg-primary">
+          <div class="d-flex align-items-center">
+            <h5 class="mx-auto"><%= "Card Number #{@card.id}" %></h5>
+            <h5 class="mx-auto"><%= "Type: #{@card.calc_type.capitalize}" %></h5>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <h2 class="mx-auto"><%= '' %></h2>
+            <h2 class="mx-auto"><%= '' %></h2>
+            <h1 class="mx-auto" style="font-size:7vw"><%= @card.number_1 %></h2>
+            <h2 class="mx-auto"><%= '' %></h2>
+          </div>
+          <h2>
+            <div class="d-flex align-items-center">
+              <span class="mx-auto"><%= '' %></span>
+              <span class="mx-auto" style="font-size:7vw"><%= @card.operator %></span>
+              <span class="mx-auto" style="font-size:7vw"><%= @card.number_2 %></span>
+              <span class="mx-auto"><%= '' %></span>
+            </div>
+          </h2>
+          <div class="h_line text-center"></div><br>
+        </div>
       </div>
       <div class="form-inline text-center">
         <%= form_with url: answer_path, method: :patch, data: { turbo: false }, local: true do |form| %>
-          <% form.label :answer, { class: "form-label"} %>
+          <br><% form.label :answer, { class: "form-label"} %>
           <%= hidden_field_tag 'card_id', @card.id %>
-          <%= form.number_field :answer, { class: "form-control", placeholder: "Answer" } %>
+          <%= form.number_field :answer, { class: "form-control", placeholder: "Answer", autofocus: true  }%>
           <%= form.submit "Submit Answer", class: "btn btn-primary" %>
         <% end %>
       </div>
