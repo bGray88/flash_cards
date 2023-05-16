@@ -1,4 +1,8 @@
 body {
+  background: url("backgrounds/numbers-falling-bkgd.jpeg");
+  background-size: cover;
+  resize: both;
+
   /* Remove the navbar's default margin-bottom and rounded borders */ 
   .navbar {
     height: 10%;

@@ -24,3 +24,9 @@
   width: 80%;
   margin: auto;
 }
+
+.h_line_scores {
+  border-bottom: 1vh solid rgb(0, 0, 0);
+  width: 50%;
+  margin: auto;
+}
