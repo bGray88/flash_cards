@@ -19,11 +19,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   
   <body>
-    <%= render partial: "shared/navbar" %>
-  </body>
-
-  <body>
-    <%= render partial: "shared/flash" %>
-    <%= yield %>
+    <div class="has-bg-img">
+      <%= render partial: "shared/navbar" %>
+      <%= render partial: "shared/flash" %>
+      <%= yield %>
+      <img class="bg-img" src=<% image_path("backgrounds/numbers-falling-bkgd.jpeg") %>>
+    </div>
   </body>
 </html>

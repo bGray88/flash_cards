@@ -4,7 +4,7 @@
 
 <div class="high-scores" >
   <center><h2>Current High Scores</h2></center>
-  <div class="h_line text-center"></div><br>
+  <div class="h_line_scores text-center"></div><br>
   <% @users.each do |user| %>
     <div class="high-score" id=<%= "user-#{user.id}" %>>
       <h4><center><%= "#{user.first_name} #{user.last_name} - High Score: #{user.hi_score}" %></center></h4>
