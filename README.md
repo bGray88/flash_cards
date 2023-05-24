@@ -1,7 +1,15 @@
 # README
 ## Flash Cards
 
-A fun math game!
+A math flash card game for anyone looking to have a quick round of rejuvenating their memory.
+
+Flashcards are an effective way to promote active recall in your brain, which is the process by which we retrieve a memory. Seeing a term and then actively attempting to remember the meaning helps to move it from short-term to long-term memory.
+
+Built using Ruby on Rails, CSS, and PostgreSQL, this fun game will keep track of your continuing high score on a persisting user account.
+
+![alt text](app/assets/images/readme/readme-screenshot-01.png)
+
+![alt text](app/assets/images/readme/readme-screenshot-02.png)
 
 <a name="readme-top"></a>
 
@@ -47,9 +55,8 @@ A fun math game!
 
   ### Learning Goals
 
-  * Microservice integration and implementation
-  * Service integration and implementation
-  * Efficient API exposure
+  * Front end addition to existing Ruby repo
+  * Rails implementation of former Ruby repo
 
   ### Built With
 
@@ -63,7 +70,6 @@ A fun math game!
     - [x] Setup Repo and Push to Github<br>
     - [x] Readme: Outlines the learning goals<br>
     - [x] Readme: Clone and Setup<br>
-    - [x] Readme: Happy Path Endpoint Use<br>
   </details>
   <details>
     <summary>In Progress</summary>
@@ -104,12 +110,8 @@ A fun math game!
 ## Usage
   
   ### Schema
-
-  ### Endpoints
-
-  <details>
   
-  </details>
+  ![alt text](app/assets/images/readme/readme-schema.png)
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
