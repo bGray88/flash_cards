@@ -6,7 +6,7 @@ body {
   /* Remove the navbar's default margin-bottom and rounded borders */ 
   .navbar {
     height: 10%;
-    margin-bottom: 0;
+    margin-bottom: 3vh;
     border-radius: 0;
     background-color: #1f1e1e;
   }
