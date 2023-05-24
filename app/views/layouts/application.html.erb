@@ -20,10 +20,10 @@
   
   <body>
     <div class="has-bg-img">
+      <img class="bg-img" src=<% image_path("backgrounds/numbers-falling-bkgd.jpeg") %>>
       <%= render partial: "shared/navbar" %>
       <%= render partial: "shared/flash" %>
       <%= yield %>
-      <img class="bg-img" src=<% image_path("backgrounds/numbers-falling-bkgd.jpeg") %>>
     </div>
   </body>
 </html>
